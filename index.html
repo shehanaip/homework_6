@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Navbar with Sidebar and Dropdown</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" onclick="toggleSidebar()">Option</a>
+    </div>
+
+   
+    <div class="sidebar" id="sidebar">
+        <a href="#" onclick="toggleSidebar()">Close</a>
+        <a href="#">Home</a>
+        <a href="#">About us</a>
+        <a href="#">Contact</a>
+        <a href="#">Support</a>
+        <div class="dropdown" onclick="toggleDropdown(this)">
+            <a href="#" class="dropbtn">Ide's</a>
+            <div class="dropdown-content" id="dropdownContent">
+                <a href="#">C/C++</a>
+                <a href="#">Java</a>
+                <a href="#">Java script</a>
+                <a href="#">PY</a>
+            </div>
+        </div>
+    </div>
+    <div class="im">
+       <img src="img.png" alt="ok"> 
+    </div>
+
+    <!-- JavaScript sorry -->
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            if (getComputedStyle(sidebar).width === "0px") {
+                sidebar.style.width = "250px";
+            } else {
+                sidebar.style.width = "0";
+            }
+        }
+
+        function toggleDropdown(dropdown) {
+            dropdown.classList.toggle("active");
+        }
+    </script>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+      </script>
+</body>
+</html>
